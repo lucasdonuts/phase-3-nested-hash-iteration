@@ -18,7 +18,17 @@ def contacts
 end
 
 def remove_strawberry(contacts)
-  # your code here!
+
+  contacts.each do |k, v|
+    if k == "Freddy Mercury"
+      v.each do |k, v|
+        if k == :favorite_ice_cream_flavors
+          v = v.delete_if { |flavor| flavor == "strawberry" }
+        end
+      end
+    end
+  end
+
 end
 
 # print the output to the terminal for inspection
